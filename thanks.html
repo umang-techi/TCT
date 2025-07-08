@@ -1,0 +1,106 @@
+<?php include 'includes/header.php'; ?>
+<div id="topform-section" >
+
+<section class="contactpic">
+        <span class="text1 regi">Thanks You </span>
+  <div class="breadcrumb">
+    <p><a href="index.php">Home </a> <span>→</span> Thank you </p>
+  </div>
+</section>
+
+   
+    <style>
+        /* Common styles for tick mark */
+        .tick-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .tick {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #059669;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Animation for Page 1: Bounce-in segments */
+        .tick-bounce .tick-part-1 {
+            stroke-dasharray: 20;
+            stroke-dashoffset: 20;
+            animation: bounceSegment 0.6s ease forwards;
+        }
+        .tick-bounce .tick-part-2 {
+            stroke-dasharray: 30;
+            stroke-dashoffset: 30;
+            animation: bounceSegment 0.6s ease forwards 0.3s;
+        }
+        @keyframes bounceSegment {
+            0% { stroke-dashoffset: 20; }
+            80% { stroke-dashoffset: -2; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        /* Animation for Page 2: Pulse effect */
+        .tick-pulse {
+            opacity: 0;
+            animation: pulse 1s ease-in-out forwards;
+        }
+        @keyframes pulse {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Animation for Page 3: Spiral reveal */
+        .tick-spiral {
+            transform-origin: center;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: spiral 1.2s ease-out forwards;
+        }
+        @keyframes spiral {
+            0% { stroke-dashoffset: 200; transform: rotate(0deg); }
+            100% { stroke-dashoffset: 0; transform: rotate(360deg); }
+        }
+
+        /* Text animation */
+        .text-slide {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slide 0.8s ease forwards 0.5s;
+        }
+        @keyframes slide {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <!-- Page 1: Bounce-in Segments Animation -->
+    <section class="min-h-screen bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center mb-5">
+        <div class="text-center container ">
+            <div class="offset-md-2 col-md-8 shadowcont">
+            <div class="tick-container">
+                <svg class="tick tick-bounce" viewBox="0 0 52 52">
+                    <path class="tick-part-1" d="M14 27l10 10"/>
+                    <path class="tick-part-2" d="M24 37l16-16"/>
+                </svg>
+            </div>
+             <h1 class="text-lg text-gray-600 mt-2 text-slide">Thank you for your submission!</h1>
+        <p>We have successfully received your request and it is currently being processed. A dedicated registration and housing coordinator will contact you via email within 5 minutes to assist in completing your request and to address any questions you may have.</p>
+        <p>Please keep an eye on your inbox. If you do not see an email shortly, we kindly ask that you check your spam or junk folder, as it may have been inadvertently filtered there.</p>
+    </div>
+        </div>
+    </section>
+
+    
+    </div>
+    
+<?php include 'includes/footer.php'; ?>
+
+

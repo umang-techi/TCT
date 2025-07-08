@@ -1,0 +1,113 @@
+<?php include 'includes/header.php'; ?>
+
+<div class="continess">
+  <section class="contactpic">
+    <span class="text1">Contact Us</span>
+    <div class="breadcrumb">
+      <p><a href="index.php">Home </a> <span>→</span> Contact Us</p>
+    </div>
+  </section>
+
+  <div class="container py-5">
+    <div class="row">
+      <!-- Left: Form -->
+      <div class="col-md-8" data-aos="fade-right">
+        <div class="contform-section">
+          <h5 class="mb-3">MAKE AN APPOINTMENT</h5>
+          <h2 class="mb-4">Request a free quote</h2>
+
+          <!-- Contact Form -->
+          <form id="contact-form" method="POST" action="send-contact.php" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control mb-3" name="Full_Name" placeholder="Full Name" required>
+              <input type="email" class="form-control" name="Email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group mb-3">
+              <input type="tel" class="form-control mb-3" name="Phone" placeholder="Phone" required>
+              <input type="text" class="form-control" name="Subject" placeholder="Subject" required>
+            </div>
+
+            <div class="form-group mb-3">
+              <textarea class="form-control" name="Message" placeholder="Type Your Message" rows="5" required></textarea>
+            </div>
+
+              <!-- IP Address -->
+    <input type="hidden" name="ip_address" id="ip_address">
+
+            <button type="submit" class="btn btn btn-slide-fill">Submit Message</button>
+          </form>
+
+<!-- Thank You Message -->
+<div class="thank-you" id="thank-you-message" style="display:none;">
+  ✅ Thank you for your submission! We’ll get back to you soon.
+</div>
+
+          </div>
+        </div>
+   
+
+      <!-- Right: Image Section -->
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="image-section">
+          <!-- You can place an image here if needed -->
+        </div>
+      </div>
+    </div>
+     
+
+    <div class="row contact-container">
+      <!-- Left: Google Map -->
+      <div class="col-md-8">
+        <div class="map-section">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.243724948521!2d-122.40326492442811!3d37.78432761161016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807ded297e89%3A0xd9553880aa393c6c!2sMoscone%20Center!5e0!3m2!1sen!2sgr!4v1749842698307!5m2!1sen!2sgr" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="col-md-4">
+        <div class="info-section">
+          <h2>Conference Location</h2>
+          <hr />
+          <div class="info-item">
+            <div class="icon-circle">📍</div>
+            <div class="info-text">
+              <strong>Conference Location</strong>
+              Moscone Center | San Francisco, CA, United States
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-circle">✉️</div>
+            <div class="info-text">
+              <strong>Conference Dates</strong>
+              October 25th - 28th, 2025
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-circle">📞</div>
+            <div class="info-text">
+              <strong>Attendees</strong>
+              15,000+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<?php include 'includes/footer.php'; ?>
+
+<script>
+
+  // IP fetch
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("ip_address").value = data.ip;
+    });
+
+      </script>
+
+
+

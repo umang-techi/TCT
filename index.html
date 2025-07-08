@@ -1,0 +1,497 @@
+<?php include 'includes/header.php'; ?>
+
+<!-- Hero -->
+<section id="topform-section " class="py-5  bgslido">
+  <div class="container ">
+    <div class="row g-0 align-items-stretch">
+
+          <!-- Left Side: Event Info -->
+      <div class="col-lg-5  text-white d-flex align-items-center justify-content-left p-5 hero-slide">
+          <section class="hero-section">
+    <!-- Decorative Dashed Curve with Arrow -->
+
+
+
+
+    <!-- Title -->
+    <div class="event-title" ><h1>TCT 2025</h1>
+    <img src="assets/img/arrow.png" class="img-fluid rounded" alt="Arrow">
+  </div>
+
+     <!-- Subtitle / Description -->
+    <div class="event-description mt-3" data-aos="fade-right">
+      Transcatheter Cardiovascular <br />
+      Therapeutics (TCT) 
+    </div>
+
+    <!-- Location -->
+    <div class="event-location mt-3" data-aos="fade-left">
+      <i class="fas fa-map-marker-alt"></i> Moscone Center, California, USA
+    </div>
+
+        <!-- Event Date -->
+    <div class="event-date mt-3" data-aos="fade-right">
+      <i class="fas fa-calendar-alt"></i> 25th – 28th October, 2025
+    </div>
+
+ 
+  </section>
+
+      </div>
+      <div class="col-lg-3">
+            <div class="countdown-container">
+    <div class="countdown" id="countdown" data-aos="fade-left">
+      <div class="time-box">
+        <h3 id="days">00</h3>
+        <span>Days</span>
+      </div>
+      <div class="time-box">
+        <h3 id="hours">00</h3>
+        <span>Hours</span>
+      </div>
+      <div class="time-box">
+        <h3 id="minutes">00</h3>
+        <span>Minutes</span>
+      </div>
+      <div class="time-box">
+        <h3 id="seconds">00</h3>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Right Side: Appointment Form Section -->
+      <div class="col-lg-4">
+        <div class="form-section" >
+  <ul class="nav nav-pills nav-justified mb-4 t p-1 " id="appointmentTabs" data-aos="fade-left">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#registration">
+        <i class="fas fa-edit me-1"></i> Registration
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#housing">
+        <i class="fas fa-hotel me-1"></i> Housing
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+
+    <!-- Registration Form -->
+    <div class="tab-pane fade show active" id="registration" data-aos="fade-left">
+      <h4 class="text-center mb-4">Registration Request</h4>
+      <form action="send.php" method="POST" class="row g-3 needs-validation" novalidate id="registrationForm">
+
+    <!-- Hidden Settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="http://localhost/myproj/thanks.php">
+
+    <!-- Full Name -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-user form-control-icon"></i>
+        <input type="text" class="form-control with-icon" name="Name" placeholder="Full Name" required>
+        <div class="invalid-feedback">Full Name is required.</div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-envelope form-control-icon"></i>
+        <input type="email" class="form-control with-icon" name="Email" id="email" placeholder="Email" required>
+        <div class="invalid-feedback">Valid Email is required.</div>
+      </div>
+    </div>
+
+    <!-- Confirm Email -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-envelope form-control-icon"></i>
+        <input type="email" class="form-control with-icon" id="confirmEmail" placeholder="Confirm Email" required>
+        <div class="invalid-feedback" id="confirmEmailError">Confirm Email must match.</div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-phone form-control-icon"></i>
+        <input type="tel" class="form-control with-icon" name="Mobile" placeholder="Contact Number" required>
+        <div class="invalid-feedback">Contact Number is required.</div>
+      </div>
+    </div>
+
+    <!-- Occupation -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-briefcase form-control-icon"></i>
+        <input type="text" class="form-control with-icon" name="Occupation" placeholder="Occupation" required>
+        <div class="invalid-feedback">Occupation is required.</div>
+      </div>
+    </div>
+
+    <!-- Delegates -->
+    <div class="col-md-6 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-users form-control-icon"></i>
+        <select class="form-select with-icon" name="Delegates" required>
+          <option value="" disabled selected>No. of Delegates</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5+</option>
+        </select>
+        <div class="invalid-feedback">Please select number of delegates.</div>
+      </div>
+    </div>
+
+    <!-- Country -->
+    <div class="col-md-6 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-globe form-control-icon"></i>
+        <select class="form-select with-icon" id="countrySelect" name="Country" required>
+          <option value="">Select Country</option>
+          <option>India</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Australia</option>
+        </select>
+        <div class="invalid-feedback">Please select your country.</div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="col-12 form-group position-relative">
+      <div class="input-wrapper">
+        <i class="fas fa-home form-control-icon"></i>
+        <textarea class="form-control with-icon" name="Address" placeholder="Full Address" required></textarea>
+        <div class="invalid-feedback">Address is required.</div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="col-12 text-center">
+      <button type="submit" class="playbtn">
+        Submit Registration
+        <span></span><span></span><span></span><span></span>
+      </button>
+    </div>
+  </form>
+    </div>
+
+    <!-- Housing Form -->
+    <div class="tab-pane fade" id="housing">
+      <h4 class="text-center mb-4">Housing Request</h4>
+     <form class="row g-3 needs-validation" action="send-hotel.php" method="POST" id="hotelForm" novalidate>
+
+  <!-- Full Name -->
+ <div class="col-12 position-relative">
+      <i class="fas fa-user form-control-icon"></i>
+      <input type="text" class="form-control with-icon" name="Name" placeholder="Full Name" required>
+      <div class="invalid-feedback">Please enter your full name.</div>
+    </div>
+
+    <!-- Email -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-envelope form-control-icon"></i>
+      <input type="email" class="form-control with-icon" name="Email" placeholder="Email" required>
+      <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+
+    <!-- Confirm Email -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-envelope form-control-icon"></i>
+      <input type="email" class="form-control with-icon" id="confirmEmail" placeholder="Confirm Email" required>
+      <div class="invalid-feedback">Emails do not match.</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-phone form-control-icon"></i>
+      <input type="tel" class="form-control with-icon" name="Mobile" placeholder="Contact Number" required>
+      <div class="invalid-feedback">Please enter your contact number.</div>
+    </div>
+
+    <!-- Hotel Category -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-star form-control-icon"></i>
+      <select class="form-select with-icon" name="Category" required>
+        <option value="" disabled selected>Hotel Category</option>
+        <option>2 Star</option>
+        <option>3 Star</option>
+        <option>4 Star</option>
+        <option>5 Star</option>
+      </select>
+      <div class="invalid-feedback">Please select a hotel category.</div>
+    </div>
+
+    <!-- Check-In -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-calendar-alt form-control-icon"></i>
+     <input type="date" class="form-control with-icon" name="Check_In" id="checkin" placeholder="Check-In Date" required>
+      <div class="invalid-feedback">Please enter a check-in date.</div>
+    </div>
+
+    <!-- Check-Out -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-calendar-check form-control-icon"></i>
+     <input type="date" class="form-control with-icon" name="Check_Out" id="checkout" placeholder="Check-Out Date" required>
+      <div class="invalid-feedback">Please enter a check-out date.</div>
+    </div>
+
+    <!-- Budget -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-dollar-sign form-control-icon"></i>
+      <input type="text" class="form-control with-icon" name="Budget" placeholder="Per Day Budget" required>
+      <div class="invalid-feedback">Please enter your per day budget.</div>
+    </div>
+
+    <!-- Rooms -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-door-open form-control-icon"></i>
+      <select class="form-select with-icon" name="Rooms" required>
+        <option value="" disabled selected>Number of Rooms</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+      <div class="invalid-feedback">Please select the number of rooms.</div>
+    </div>
+
+    <!-- IP Address -->
+    <input type="hidden" name="ip_address" id="ip_address">
+
+
+  <!-- Submit Button -->
+  <div class="col-12 text-center mt-3">
+    <button class="playbtn" type="submit">
+      <span></span><span></span><span></span><span></span>
+      Submit Housing
+    </button>
+  </div>
+</form>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7" data-aos="fade-right">
+        <h2 class="element element2">Welcome to TCT 2025 </h2>
+        <div class="box sec"></div>
+        <h4>The 37th Annual Transcatheter Cardiovascular Therapeutics Conference</h4>
+        <p>TCT 2025 is recognized as a premier global event dedicated to interventional cardiology, bringing together physicians, researchers, and healthcare professionals who are passionate about improving cardiovascular care. The conference offers an engaging and comprehensive program focused on the latest innovations, clinical best practices, and evidence-based strategies designed to enhance patient outcomes.</p>
+      <p>This year’s agenda places a strong emphasis on acute cardiovascular interventions. Key sessions will highlight developments in emergency percutaneous coronary intervention (PCI), primary angioplasty, and advanced approaches to high-risk structural and endovascular procedures. Practical training and expert insights will support attendees in applying cutting-edge knowledge to real-world clinical decision-making.</p>
+    <p>Participants can look forward to a dynamic mix of live case demonstrations, interactive discussions, and presentations showcasing the latest data and emerging technologies. TCT 2025 also provides valuable networking opportunities, enabling attendees to connect with global leaders and innovators shaping the future of interventional cardiology.</p>  
+  <h6>Whether you're seeking to deepen your expertise or stay informed on the most current advancements, TCT 2025 offers a world-class platform for professional development and collaboration.</h6> 
+  </div>
+      <div class="col-md-5 text-center" data-aos="fade-left">
+        <img src="assets/img/about-img.jpg" class="img-fluid rounded shadow" alt="About TCT">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="stats-section">
+  <div class="stats-container">
+    
+    <!-- Location -->
+    <div class="stat-box" data-aos="fade-right">
+      <div class="icon-box">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="stat-number">Location</div>
+      <div class="stat-label">Moscone Center<br>San Francisco, CA, United States</div>
+    </div>
+
+    <!-- Dates -->
+    <div class="stat-box" data-aos="fade-up">
+      <div class="icon-box">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="stat-number">Oct 25–28</div>
+      <div class="stat-label">Conference Dates<br>2025</div>
+    </div>
+
+    <!-- Attendees -->
+    <div class="stat-box" data-aos="fade-left">
+      <div class="icon-box">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="stat-number" id="attendeeCount" data-target="15000">0</div>
+      <div class="stat-label">Attendees</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Key Dates Section -->
+
+
+<section id="keydates">
+  <div class="container text-center">
+    <h2 class="text-center section-title mb-5 element element2" data-aos="zoom-in">Key Dates</h2>
+    <div class="box sec"></div>
+    <div class="row g-4">
+      <!-- June -->
+      <div class="col-md-4 date-card" data-aos="fade-up">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> June 25, 2025</h5>
+          <p>Website Launch</p>
+        </div>
+      </div>
+
+      <!-- July -->
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> July 1, 2025</h5>
+          <p>Early‑bird registration deadline</p>
+        </div>
+      </div>
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> July 14, 2025</h5>
+          <p>Abstract submission deadline</p>
+        </div>
+      </div>
+
+      <!-- August -->
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> Aug 1, 2025</h5>
+          <p>Final registration deadline</p>
+        </div>
+      </div>
+
+      <!-- September -->
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> Sept 1, 2025</h5>
+          <p>Housing booking deadline</p>
+        </div>
+      </div>
+
+      <!-- October -->
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> Oct 15, 2025</h5>
+          <p>Speaker upload deadline</p>
+        </div>
+      </div>
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> Oct 25–28, 2025</h5>
+          <p>Conference @ Moscone Center</p>
+        </div>
+      </div>
+
+      <!-- November -->
+      <div class="col-md-4 date-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="event-card">
+          <h5> <i class="fas fa-calendar-alt"></i> Nov 1, 2025</h5>
+          <p>On-demand content available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Appointment Section -->
+
+
+
+<section class="safe-section py-5 ">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Side: Illustration -->
+      <div class="col-md-6 mb-4 mb-md-0 text-center">
+        <div class="position-relative " >
+          <img src="assets/img/hotel.png" alt="Housing" class="img-fluid rounded" data-aos="fade-up">
+          <div class="secure-icon">
+            <div class="icon-circle">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Text Content -->
+      <div class="col-md-6">
+        <h2 class=" fw-bold element element2" data-aos="fade-up">Housing</h2>
+        <h3 class="fw-bold mb-4" data-aos="fade-up">Exclusive Hotel Benefits for TCT 2025 Attendees</h3>
+        <p class="mb-3" data-aos="fade-left">
+         Take advantage of special discounted hotel rates available exclusively to registered TCT 2025 participants. To secure accommodations at one of the official conference hotels, attendees must complete their event registration in advance.
+        </p>
+
+        <h5 class="fw-bold mt-4" data-aos="fade-right">Why Book Through the TCT Official Hotel Block?</h5>
+        <ul class="list-unstyled mt-3" data-aos="fade-left">
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> All hotels are reviewed and approved to meet TCT standards</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Stay close to fellow attendees for enhanced networking opportunities</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> On-site support from dedicated housing staff</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Flexible reservation policies with no change fees or prepayment required</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Enjoy complimentary standard Wi-Fi in your guest room</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<?php include 'includes/footer.php'; ?>
+
+<script>
+  // Get IP
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("ip_address").value = data.ip;
+    });
+
+  // Form validation
+  const form = document.getElementById("registrationForm");
+
+  form.addEventListener("submit", function (e) {
+    const email = document.getElementById("email").value.trim();
+    const confirmEmail = document.getElementById("confirmEmail").value.trim();
+    const confirmField = document.getElementById("confirmEmail");
+    const emailMismatch = document.getElementById("emailMismatch");
+
+    // Reset mismatch feedback
+    confirmField.setCustomValidity("");
+
+    if (email !== confirmEmail) {
+      confirmField.setCustomValidity("Emails do not match");
+      emailMismatch.style.display = "block";
+    } else {
+      emailMismatch.style.display = "none";
+    }
+
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add("was-validated");
+    } else {
+      form.submit(); // valid → now submit to send.php
+    }
+  });
+</script>

@@ -1,0 +1,40 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 10 Nov 2022 12:07:18 at https://preview.hasthemes.com/panshi/onepage-index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://preview.hasthemes.com/panshi/onepage-index.html -O1 "C:\My Web Sites\prajapaticateringservices" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+
+
+Information, Warnings and Errors reported for this mirror:
+
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+
+	such as username/password authentication for websites mirrored in this project
+
+	do not share these files/folders if you want these information to remain private
+
+
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.eot (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.eot? (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.woff2 (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.woff (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.ttf (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:45	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/fonts/glyphicons-halflings-regular.svg (from https://preview.hasthemes.com/panshi/css/bootstrap.min.css)
+
+12:07:51	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/blog-detail.html (from https://preview.hasthemes.com/panshi/blog-details.html)
+
+12:07:51	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/img/footer/1.jpg (from https://preview.hasthemes.com/panshi/css/shortcode/default.css)
+
+12:07:51	Error: 	"Forbidden" (403) at link https://preview.hasthemes.com/panshi/css/owl.video.play.png (from https://preview.hasthemes.com/panshi/css/owl.carousel.css)
+
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 33 seconds : 92 links scanned, 82 files written (5714066 bytes overall) [4649150 bytes received at 140883 bytes/sec], 1574705 bytes transferred using HTTP compression in 50 files, ratio 27%, 30.6 requests per connection
+
+(9 errors, 0 warnings, 0 messages)
+

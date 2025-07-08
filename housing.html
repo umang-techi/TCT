@@ -1,0 +1,173 @@
+<?php include 'includes/header.php'; ?>
+
+<div id="topform-section" >
+
+<section class="contactpic">
+        <span class="text1">Housing </span>
+  <div class="breadcrumb">
+    <p> <a href="index.php">Home </a> <span>→</span> Housing </p>
+  </div>
+</section>
+
+<div class="container housing-page">
+  <div class="row">
+    <div class="col-md-1">
+</div>
+<div class="col-lg-5" data-aos="fade-right">
+     <img src="assets/img/housing.jpg" alt="Registration Image" class="Registration img img-fluid">
+</div>
+<div class="col-lg-5" data-aos="fade-left">
+        <div class="form-section">
+  <div class="tab-content">
+
+    <!-- Registration Form -->
+   
+
+    <!-- Housing Form -->
+    <div class="tab-pane fade show active" id="housing">
+      <h2 class="text-center mb-4">Housing Request</h2>
+     
+<form class="row g-3 needs-validation" action="send-hotel.php" method="POST" id="hotelForm" novalidate>
+
+  <!-- Full Name -->
+ <div class="col-12 position-relative">
+      <i class="fas fa-user form-control-icon"></i>
+      <input type="text" class="form-control with-icon" name="Name" placeholder="Full Name" required>
+      <div class="invalid-feedback">Please enter your full name.</div>
+    </div>
+
+    <!-- Email -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-envelope form-control-icon"></i>
+      <input type="email" class="form-control with-icon" name="Email" placeholder="Email" required>
+      <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+
+    <!-- Confirm Email -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-envelope form-control-icon"></i>
+      <input type="email" class="form-control with-icon" id="confirmEmail" placeholder="Confirm Email" required>
+      <div class="invalid-feedback">Emails do not match.</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-phone form-control-icon"></i>
+      <input type="tel" class="form-control with-icon" name="Mobile" placeholder="Contact Number" required>
+      <div class="invalid-feedback">Please enter your contact number.</div>
+    </div>
+
+    <!-- Hotel Category -->
+    <div class="col-12 position-relative">
+      <i class="fas fa-star form-control-icon"></i>
+      <select class="form-select with-icon" name="Category" required>
+        <option value="" disabled selected>Hotel Category</option>
+        <option>2 Star</option>
+        <option>3 Star</option>
+        <option>4 Star</option>
+        <option>5 Star</option>
+      </select>
+      <div class="invalid-feedback">Please select a hotel category.</div>
+    </div>
+
+    <!-- Check-In -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-calendar-alt form-control-icon"></i>
+     <input type="date" class="form-control with-icon" name="Check_In" id="checkin" placeholder="Check-In Date" required>
+      <div class="invalid-feedback">Please enter a check-in date.</div>
+    </div>
+
+    <!-- Check-Out -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-calendar-check form-control-icon"></i>
+     <input type="date" class="form-control with-icon" name="Check_Out" id="checkout" placeholder="Check-Out Date" required>
+      <div class="invalid-feedback">Please enter a check-out date.</div>
+    </div>
+
+    <!-- Budget -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-dollar-sign form-control-icon"></i>
+      <input type="text" class="form-control with-icon" name="Budget" placeholder="Per Day Budget" required>
+      <div class="invalid-feedback">Please enter your per day budget.</div>
+    </div>
+
+    <!-- Rooms -->
+    <div class="col-md-6 position-relative">
+      <i class="fas fa-door-open form-control-icon"></i>
+      <select class="form-select with-icon" name="Rooms" required>
+        <option value="" disabled selected>Number of Rooms</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+      <div class="invalid-feedback">Please select the number of rooms.</div>
+    </div>
+
+    <!-- IP Address -->
+    <input type="hidden" name="ip_address" id="ip_address">
+
+
+  <!-- Submit Button -->
+  <div class="col-12 text-center mt-3">
+    <button class="playbtn" type="submit">
+      <span></span><span></span><span></span><span></span>
+      Submit Housing
+    </button>
+  </div>
+</form>
+    </div>
+</div>
+</div>
+  </div>
+      <div class="col-md-1">
+</div>
+</div>
+</div>
+
+</div>
+
+<?php include 'includes/footer.php'; ?>
+
+
+
+ <script>
+  // Get IP
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("ip_address").value = data.ip;
+    });
+
+  // Form validation
+  const form = document.getElementById("housing");
+
+  form.addEventListener("submit", function (e) {
+    const email = document.getElementById("email").value.trim();
+    const confirmEmail = document.getElementById("confirmEmail").value.trim();
+    const confirmField = document.getElementById("confirmEmail");
+    const emailMismatch = document.getElementById("emailMismatch");
+
+    // Reset mismatch feedback
+    confirmField.setCustomValidity("");
+
+    if (email !== confirmEmail) {
+      confirmField.setCustomValidity("Emails do not match");
+      emailMismatch.style.display = "block";
+    } else {
+      emailMismatch.style.display = "none";
+    }
+
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add("was-validated");
+    } else {
+      form.submit(); // valid → now submit to send.php
+    }
+  });
+</script>
+
+
+

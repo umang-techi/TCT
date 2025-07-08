@@ -1,0 +1,150 @@
+<?php include 'includes/header.php'; ?>
+
+<div id="topform-section">
+  <section class="contactpic">
+    <span class="text1 regi">Registration</span>
+    <div class="breadcrumb">
+      <p><a href="index.php">Home</a> <span>→</span> Registration</p>
+    </div>
+  </section>
+
+  <div class="container registration-page">
+    <div class="row">
+      <div class="col-md-1"></div>
+
+      <div class="col-lg-5" data-aos="fade-right">
+        <img src="assets/img/registration.jpg" alt="Registration Image" class="Registration img img-fluid">
+      </div>
+
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="form-section">
+          <h2 class="text-center mb-4">Registration Request</h2>
+
+     <form class="row g-3 needs-validation" id="registrationForm" novalidate>
+  <!-- IP -->
+  <input type="hidden" name="ip_address" id="ip_address">
+
+  <!-- Full Name -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-user form-control-icon"></i>
+    <input type="text" class="form-control with-icon" name="Name" placeholder="Full Name" required>
+    <div class="invalid-feedback">Please enter your full name.</div>
+  </div>
+
+  <!-- Email -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-envelope form-control-icon"></i>
+    <input type="email" class="form-control with-icon" name="Email" id="email" placeholder="Email" required>
+    <div class="invalid-feedback">Please enter a valid email address.</div>
+  </div>
+
+  <!-- Confirm Email -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-envelope form-control-icon"></i>
+    <input type="email" class="form-control with-icon" name="ConfirmEmail" id="confirmEmail" placeholder="Confirm Email" required>
+    <div class="invalid-feedback" id="emailMismatch">Emails do not match.</div>
+  </div>
+
+  <!-- Mobile -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-phone form-control-icon"></i>
+    <input type="tel" class="form-control with-icon" name="Mobile" placeholder="Contact Number" required>
+    <div class="invalid-feedback">Please enter your contact number.</div>
+  </div>
+
+  <!-- Occupation -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-briefcase form-control-icon"></i>
+    <input type="text" class="form-control with-icon" name="Occupation" placeholder="Occupation" required>
+    <div class="invalid-feedback">Please enter your occupation.</div>
+  </div>
+
+  <!-- Delegates -->
+  <div class="col-md-6 position-relative">
+    <i class="fas fa-users form-control-icon"></i>
+    <select class="form-select with-icon" name="Delegates" required>
+      <option value="" disabled selected>No. of Delegates</option>
+      <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+    </select>
+    <div class="invalid-feedback">Please select number of delegates.</div>
+  </div>
+
+  <!-- Country -->
+  <div class="col-md-6 position-relative">
+    <i class="fas fa-globe form-control-icon"></i>
+    <select class="form-select with-icon" name="Country" required>
+      <option value="" disabled selected>Select Country</option>
+      <option>India</option><option>USA</option><option>Canada</option><option>Australia</option>
+    </select>
+    <div class="invalid-feedback">Please select a country.</div>
+  </div>
+
+  <!-- Address -->
+  <div class="col-12 position-relative">
+    <i class="fas fa-home form-control-icon"></i>
+    <textarea class="form-control with-icon" name="Address" placeholder="Full Address" required></textarea>
+    <div class="invalid-feedback">Please enter your full address.</div>
+  </div>
+
+  <!-- Submit -->
+  <div class="col-12 text-center mt-3">
+    <button class="playbtn" type="submit">
+      <span></span><span></span><span></span><span></span>
+      Submit Registration
+    </button>
+  </div>
+</form>
+
+
+
+
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>
+
+<?php include 'includes/footer.php'; ?>
+
+<!-- JavaScript: Validation + IP Fetch -->
+<script>
+  // Get IP
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("ip_address").value = data.ip;
+    });
+
+  // Form validation
+  const form = document.getElementById("registrationForm");
+
+  form.addEventListener("submit", function (e) {
+    const email = document.getElementById("email").value.trim();
+    const confirmEmail = document.getElementById("confirmEmail").value.trim();
+    const confirmField = document.getElementById("confirmEmail");
+    const emailMismatch = document.getElementById("emailMismatch");
+
+    // Reset mismatch feedback
+    confirmField.setCustomValidity("");
+
+    if (email !== confirmEmail) {
+      confirmField.setCustomValidity("Emails do not match");
+      emailMismatch.style.display = "block";
+    } else {
+      emailMismatch.style.display = "none";
+    }
+
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add("was-validated");
+    } else {
+      form.submit(); // valid → now submit to send.php
+    }
+  });
+</script>
+
+
+
